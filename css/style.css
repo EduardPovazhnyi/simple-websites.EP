@@ -9,14 +9,15 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background-color: #811f12;
     padding: 20px;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #0f059e;
+    color: #e2cd0c;
     padding: 10px 20px;
+    position: relative;
 }
 
 header h1 {
@@ -30,13 +31,45 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    position: relative;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
 }
+
+nav ul li a:hover {
+    background-color: #ace906;
+    color: #fff;
+}
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0f059e;
+    list-style: none;
+    padding: 10px 0;
+    width: 150px;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li a {
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    text-align: left;
+}
+
+nav ul li .dropdown li a:hover {
+    background-color: #ace906;
+}
+
 
 /* Main Content */
 main {
@@ -46,7 +79,7 @@ main {
 section {
     margin: 20px 0;
     padding: 20px;
-    background: #fff;
+    background: #ace906;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -55,18 +88,28 @@ section {
 .gallery {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
 .card {
     text-align: center;
+    flex: 1 1 calc(33.333% - 20px);
 }
 
 .card img {
-    width: 100px;
-    height: 100px;
+    width: 550px; /* Fixed width */
+    height: 325px; /* Fixed height */
     object-fit: cover;
+    border: 3px solid #ddd;
     margin-bottom: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
 }
 
 /* Contact Form */
@@ -91,10 +134,23 @@ form button {
 }
 
 form button:hover {
-    background-color: #555;
+    background-color: #811f12;
 }
 
 footer {
     text-align: center;
     margin-top: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card img {
+        width: 100%; /* Images adjust to smaller screen sizes */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
