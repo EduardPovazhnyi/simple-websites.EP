@@ -9,3 +9,6 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
+else{
+    echo("Successfull");
+}
