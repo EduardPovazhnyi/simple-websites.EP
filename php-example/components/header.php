@@ -1,5 +1,5 @@
 <?php
-define ('ROOT_DIR', '/php-example/');
+define ('ROOT_DIR', '/simple-websites.EP/php-example/');
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +8,7 @@ define ('ROOT_DIR', '/php-example/');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 <header class='flex bg-[#121533] py-3 px-4 sm:px-10 font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>

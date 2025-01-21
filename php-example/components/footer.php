@@ -9,5 +9,8 @@
         </ul>
       </div>
     </footer>
+    <script src="<?=ROOT_DIR?>js/script.js">
+
+    </script>
 </body>
 </html>
