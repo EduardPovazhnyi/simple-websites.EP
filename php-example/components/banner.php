@@ -4,7 +4,10 @@
           <h2 class="text-gray-800 lg:text-5xl text-3xl font-bold lg:!leading-[56px]">HarmonyHub: A Community Platform for Music Enthusiasts</h2>
           <p class="text-gray-800 mt-6 text-base leading-relaxed">HarmonyHub is a community-driven website designed for music enthusiasts to connect, share knowledge, and collaborate.</p>
           <button type='button'
-            class="bg-transparent border-2 border-gray-800 mt-12 transition-all text-gray-800 font-bold text-sm rounded-md px-6 py-2.5">Get Started</button>
+            class="bg-transparent border-2 border-gray-800 mt-12 transition-all text-gray-800 font-bold text-sm rounded-md px-6 py-2.5" onclick="redirectToLogin()">Sign in</button>
+            <script>
+              function redirectToLogin() {window.location.href = "..\php-example\pages\login.php";}
+            </script>
         </div>
 
         <div class="lg:h-[480px] flex items-center">

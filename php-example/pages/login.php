@@ -57,7 +57,8 @@ include '../components/header.php';
             </form>
           </div>
           <div class="max-md:mt-8">
-            <img src="..\php-example\assets\img\tomorrowland-best-summer-music-festivals-europe.jpg" class="w-full aspect-[71/50] max-md:w-4/5 mx-auto block object-cover" alt="Summer Fest" />
+            <img src="..\assets\img\tomorrowland-best-summer-music-festivals-europe.jpg" class="w-full aspect-[71/50] max-md:w-4/5 mx-auto block object-cover" alt="Summer Fest" />
+            <!--<img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1190x10000:format=jpg/path/sa6549607c78f5c11/image/i82f8384a1348ab84/version/1554202007/tomorrowland-best-summer-music-festivals-europe.jpg" class="w-full aspect-[71/50] max-md:w-4/5 mx-auto block object-cover" alt="Summer Fest" />-->
           </div>
         </div>
       </div>
