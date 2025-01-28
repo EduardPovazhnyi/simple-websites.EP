@@ -8,7 +8,7 @@
         </div>
 
         <div class="lg:h-[480px] flex items-center">
-          <img src="..\php-example\assis\img\ACDC-web-image--e1721660779686.jpeg" class="w-full h-full object-cover" alt="AC/DC" />
+          <img src="..\php-example\assets\img\ACDC-web-image--e1721660779686.jpeg" class="w-full h-full object-cover" alt="AC/DC" />
         </div>
       </div>
 
