@@ -6,7 +6,7 @@
           <button type='button'
             class="bg-transparent border-2 border-gray-800 mt-12 transition-all text-gray-800 font-bold text-sm rounded-md px-6 py-2.5" onclick="redirectToLogin()">Sign in</button>
             <script>
-              function redirectToLogin() {window.location.href = "..\php-example\pages\login.php";}
+              function redirectToLogin() {window.location.href = "..\\php-example\\pages\\login.php";}
             </script>
         </div>
 

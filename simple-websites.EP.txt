@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple webpage with a JavaScript onclick event and a clean layout using CSS Flexbox.">
+    <meta name="author" content="Eduard Povazhnyi">
+    <title>Simple Webpage</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>My Webpage</h1>
+            <ul>
+                <li><a href="#section1">Gallery</a></li>
+                <li><a href="#section2">About</a></li>
+                <li><a href="#section3">Contact</a></li>
+                <li>
+                    <a href="#">More</a>
+                    <ul class="dropdown">
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Culture</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Gallery Section -->
+        <section id="section1" class="gallery-section">
+            <h2>Image Gallery</h2>
+            <div class="gallery">
+                <div class="card">
+                    <img src="https://media.istockphoto.com/id/1389933058/photo/evening-view-of-metallurgical-plants-from-the-height-of-150-m-zaporozhye-ukraine.jpg?s=2048x2048&w=is&k=20&c=sbdUptcw73VoTD-p5SgkMucPU7UMNwC1wuTJtVoioxo=" alt="Zaporizhia">
+                    <p>Zaporizhia Industrial Area</p>
+                </div>
+                <div class="card">
+                    <img src="https://media.istockphoto.com/id/2170762448/photo/power-of-industry-oil-refinery.jpg?s=2048x2048&w=is&k=20&c=JtwsRfnEh--SaSObISl4aCXxoIg07s7TzR5OSByjB3Y=" alt="Zaporizhia 2">
+                    <p>Zaporizhia Industrial Area</p>
+                </div>
+                <div class="card">
+                    <img src="https://media.istockphoto.com/id/1077240568/photo/street-view.jpg?s=2048x2048&w=is&k=20&c=369zNSMcQlSLzYXWEwYSMqI6FWq5P9rEZ4SiKkYABKI=" alt="Zaporizhia 3">
+                    <p>Zaporizhia City Center</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="section2" class="about-section">
+            <h2>About Us</h2>
+            <p>Zaporizhzhia is known for the historic island of Khortytsia, multiple power stations and for being an important industrial centre. Steel, aluminium, aircraft engines, automobiles, transformers for substations, and other heavy industrial goods are produced in the region.</p>
+            <button id="alertButton">Click Me</button>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="section3" class="contact-section">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button id="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Eduard Povazhnyi. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
+
+document.getElementById('alertButton').onclick = function () {
+    alert("Thank you for your interest! We're excited to connect with you.");
+};
+document.getElementById('submit').onclick = function() {
+    alert("Thank you for contacting us!");
+};
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #811f12;
+    padding: 20px;
+}
+
+header {
+    background-color: #0f059e;
+    color: #e2cd0c;
+    padding: 10px 20px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #ace906;
+    color: #fff;
+}
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0f059e;
+    list-style: none;
+    padding: 10px 0;
+    width: 150px;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li a {
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    text-align: left;
+}
+
+nav ul li .dropdown li a:hover {
+    background-color: #ace906;
+}
+
+
+/* Main Content */
+main {
+    margin: 20px 0;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #ace906;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Section */
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card {
+    text-align: center;
+    flex: 1 1 calc(33.333% - 20px);
+}
+
+.card img {
+    width: 550px; /* Fixed width */
+    height: 325px; /* Fixed height */
+    object-fit: cover;
+    border: 3px solid #ddd;
+    margin-bottom: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #811f12;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card img {
+        width: 100%; /* Images adjust to smaller screen sizes */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+
