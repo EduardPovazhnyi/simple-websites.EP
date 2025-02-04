@@ -12,7 +12,7 @@ $routes = [
     'blog' => 'pages/blog.php', // blog page route
     'blog_list' => 'pages/blog_list.php',
     'admin' => 'pages/admin/dashboard.php', // admin page route
-    'user' => 'pages/user/dashboard.php', // user page route
+    'user_profile' => 'pages/user_profile.php', // user page route
 ];
 
 // Check if the URL matches a route

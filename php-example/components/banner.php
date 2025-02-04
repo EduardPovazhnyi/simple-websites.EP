@@ -2,12 +2,10 @@
       <div class="grid lg:grid-cols-2 items-center lg:gap-y-6 bg-blue-500">
         <div class="max-lg:order-1 max-lg:text-center sm:p-12 p-4">
           <h2 class="text-gray-800 lg:text-5xl text-3xl font-bold lg:!leading-[56px]">HarmonyHub: A Community Platform for Music Enthusiasts</h2>
-          <p class="text-gray-800 mt-6 text-base leading-relaxed">HarmonyHub is a community-driven website designed for music enthusiasts to connect, share knowledge, and collaborate.</p>
-          <button type='button'
-            class="bg-transparent border-2 border-gray-800 mt-12 transition-all text-gray-800 font-bold text-sm rounded-md px-6 py-2.5" onclick="redirectToLogin()">Sign in</button>
-            <script>
-              function redirectToLogin() {window.location.href = "..\\php-example\\pages\\login.php";}
-            </script>
+          <p class="mb-10 text-gray-800 mt-6 text-base leading-relaxed">HarmonyHub is a community-driven website designed for music enthusiasts to connect, share knowledge, and collaborate.</p>
+          <a href="login"
+            class="bg-transparent border-2 border-gray-800 mt-12 transition-all text-gray-800 font-bold text-sm rounded-md px-6 py-2.5 mt-10" >Sign in</a>
+            
         </div>
 
         <div class="lg:h-[480px] flex items-center">
@@ -59,7 +57,7 @@
           </svg>
           <h3 class="text-lg font-bold mb-2 text-gray-800">Contact Us</h3>
           <p class="text-sm text-gray-600">Form for users to send queries or feedback.</p>
-          <a href="javascript:void(0);" class="text-blue-600 font-bold inline-block text-sm mt-4 hover:underline">Learn more</a>
+          <a href="contact" class="text-blue-600 font-bold inline-block text-sm mt-4 hover:underline">Learn more</a>
         </div>
       </div>
     </div>
