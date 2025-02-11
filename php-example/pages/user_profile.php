@@ -239,7 +239,7 @@ include 'components/header.php';
                     Role
                   </th>
                   <th class="p-4 text-left text-sm font-medium text-white">
-                    Joined At
+                    Created On
                   </th>
                   <th class="p-4 text-left text-sm font-medium text-white">
                     Actions
