@@ -57,7 +57,7 @@
           </svg>
           <h3 class="text-lg font-bold mb-2 text-gray-800">Contact Us</h3>
           <p class="text-sm text-gray-600">Form for users to send queries or feedback.</p>
-          <a href="contact" class="text-blue-600 font-bold inline-block text-sm mt-4 hover:underline">Learn more</a>
+          <a href="contact" class="text-blue-600 font-bold inline-block text-sm mt-4 hover:underline">Send</a>
         </div>
       </div>
     </div>

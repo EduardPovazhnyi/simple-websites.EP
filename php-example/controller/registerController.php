@@ -3,8 +3,8 @@ include 'database/config.php';
 session_start();
 
 // Input sanitization, taking away any spaces
-$firstname = trim($_POST['firstname']);
-$surname = trim($_POST['surname']);
+$username = trim($_POST['firstname']);
+//$surname = trim($_POST['surname']);
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
 $created_on = trim($_POST['created_on']);
@@ -12,16 +12,16 @@ $role = trim($_POST['role']);
 
 
 // Validate username (alphanumeric)
-if (!preg_match('/^[a-zA-Z0-9]+$/', $firstname)) {
-    $_SESSION['status_message'] = 'firstname is not valid! Only alphanumeric characters are allowed.';
+if (!preg_match('/^[a-zA-Z0-9]+$/', $username)) {
+    $_SESSION['status_message'] = 'username is not valid! Only alphanumeric characters are allowed.';
     header('Location: register');
     exit();
 }
-if (!preg_match('/^[a-zA-Z0-9]+$/', $surname)) {
-    $_SESSION['status_message'] = 'surname is not valid! Only alphanumeric characters are allowed.';
-    header('Location: register');
-    exit();
-}
+//if (!preg_match('/^[a-zA-Z0-9]+$/', $surname)) {
+    //$_SESSION['status_message'] = 'surname is not valid! Only alphanumeric characters are allowed.';
+    //header('Location: register');
+    //exit();
+//}
 
 // Validate password (between 5 and 20 characters)
 if (strlen($password) < 5 || strlen($password) > 20) {
@@ -53,14 +53,14 @@ if ($stmt->num_rows > 0) {
     $stmt->close();
 
     // email doesn't exist, insert new account
-    $stmt = $conn->prepare("INSERT INTO user (firstname, surname, email, password, created_on, role) VALUES (?, ?, ?, ?, NOW(), 'user')");
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password, role, created_on) VALUES (?, ?, ?, 'user', NOW())");
     
     // Hash the password for security
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Bind parameters and execute the query
     if ($stmt) {
-        $stmt->bind_param('ssss', $firstname, $surname, $email, $hashed_password);
+        $stmt->bind_param('ssss', $username, $email, $hashed_password);
         $stmt->execute();
 
         // If account creation is successful

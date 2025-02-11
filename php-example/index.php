@@ -13,6 +13,12 @@ $routes = [
     'blog_list' => 'pages/blog_list.php',
     'admin' => 'pages/admin/dashboard.php', // admin page route
     'user_profile' => 'pages/user_profile.php', // user page route
+
+    // configuration files
+    'registerController' => 'controller/registerController.php',
+    'loginController' => 'controller/loginController.php',
+    'logout' => 'controller/logoutController.php',
+  
 ];
 
 // Check if the URL matches a route

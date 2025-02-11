@@ -26,12 +26,18 @@ include 'components/header.php';
               </div>
             </div>
 
+           <!-- status message -->
+          <?php if (isset($_SESSION['status_message'])) : ?>
+            <div class="status-message"><?= $_SESSION['status_message'] ?></div>
+          <?php unset($_SESSION['status_message']) ?>
+              <?php endif?>
+
             <div class="mt-6">
-              <button type="button" class="w-full py-3 px-4 text-sm tracking-wide text-white bg-black hover:bg-[#111] focus:outline-none">
+              <button type="submit" class="w-full py-3 px-4 text-sm tracking-wide text-white bg-black hover:bg-[#111] focus:outline-none">
                 Create an account
               </button>
             </div>
-            <p class="text-sm mt-6 text-center text-gray-800">Already have an account? <a href="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1">Login here</a></p>
+            <p class="text-sm mt-6 text-center text-gray-800">Already have an account? <a href="login" class="text-blue-600 font-semibold hover:underline ml-1">Login here</a></p>
           </form>
         </div>
       </div>
