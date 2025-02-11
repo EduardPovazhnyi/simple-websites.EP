@@ -26,7 +26,14 @@ include 'components/header.php';
               </div>
             </div>
 
-           <!-- status message -->
+            <div
+            class="my-6 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+            <p
+              class="mx-4 text-center text-gray-500">
+              Or
+            </p>
+          </div>
+          <!-- status message -->
           <?php if (isset($_SESSION['status_message'])) : ?>
             <div class="status-message"><?= $_SESSION['status_message'] ?></div>
           <?php unset($_SESSION['status_message']) ?>
