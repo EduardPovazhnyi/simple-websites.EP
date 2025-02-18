@@ -56,7 +56,7 @@ $stmt->store_result();
 
 if ($stmt->num_rows > 0) {
     // Username already exists
-    $_SESSION['status_message'] = 'Email address already exists! Please login.';
+    $_SESSION['status_message'] = 'Email address already exists! Please Sign in.';
     $stmt->close();
     header('Location: login');
     exit();
