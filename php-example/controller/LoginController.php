@@ -11,8 +11,9 @@ if (empty($_POST['email']) || empty($_POST['password'])) {
     exit();
 }
 
+
 // Prepare SQL statement to prevent SQL injection
-if ($stmt = $conn->prepare('SELECT id, password, role FROM user WHERE email = ?')) {
+if ($stmt = $conn->prepare('SELECT id, password, role FROM users WHERE email = ?')) {
     // Bind the input parameter (email) and execute the statement
     $stmt->bind_param('s', $_POST['email']);
     $stmt->execute();
@@ -37,9 +38,9 @@ if ($stmt = $conn->prepare('SELECT id, password, role FROM user WHERE email = ?'
 
             // Redirect based on user type (admin or regular user)
             if ($role == 'admin') {
-                header('Location: admin/dashboard');
+                header('Location: admin');
             } else {
-                header('Location: user/dashboard');
+                header('Location: user_profile');
             }
             exit();
         } else {

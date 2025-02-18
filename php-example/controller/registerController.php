@@ -3,12 +3,13 @@ include 'database/config.php';
 session_start();
 
 // Input sanitization, taking away any spaces
-$username = trim($_POST['firstname']);
+$username = trim($_POST['name']);
 //$surname = trim($_POST['surname']);
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
-$created_on = trim($_POST['created_on']);
-$role = trim($_POST['role']);
+$cpassword = trim($_POST['cpassword']);
+//$created_on = trim($_POST['created_on']);
+//$role = trim($_POST['role']);
 
 
 // Validate username (alphanumeric)
@@ -22,6 +23,13 @@ if (!preg_match('/^[a-zA-Z0-9]+$/', $username)) {
     //header('Location: register');
     //exit();
 //}
+
+// Check if passwords match
+if ($password !== $cpassword) {
+    $_SESSION['status_message'] = 'Passwords do not match!';
+    header('Location: register');
+    exit();
+}
 
 // Validate password (between 5 and 20 characters)
 if (strlen($password) < 5 || strlen($password) > 20) {
@@ -38,7 +46,10 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Check if the email already exists in the database
-$stmt = $conn->prepare('SELECT id FROM user WHERE email = ?');
+$stmt = $conn->prepare('SELECT id FROM users WHERE email = ?');
+if (!$stmt) {
+    die("Database error: " . $conn->error); // Debugging SQL error
+}
 $stmt->bind_param('s', $email);
 $stmt->execute();
 $stmt->store_result();
@@ -52,19 +63,22 @@ if ($stmt->num_rows > 0) {
 } else {
     $stmt->close();
 
+     // Hash the password for security
+     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
     // email doesn't exist, insert new account
-    $stmt = $conn->prepare("INSERT INTO users (username, email, password, role, created_on) VALUES (?, ?, ?, 'user', NOW())");
+    //$stmt = $conn->prepare("INSERT INTO users (username, email, password, role, created_on) VALUES (?, ?, ?, 'user', NOW())");
     
-    // Hash the password for security
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+   
 
-    // Bind parameters and execute the query
-    if ($stmt) {
-        $stmt->bind_param('ssss', $username, $email, $hashed_password);
-        $stmt->execute();
-
-        // If account creation is successful
-        if ($stmt->affected_rows > 0) {
+      // Insert the user into the database
+      $stmt = $conn->prepare("INSERT INTO users (username, email, password, role, created_on) VALUES (?, ?, ?, 'user', NOW())");
+      if (!$stmt) {
+        die("Database error: " . $conn->error); // Debugging SQL error
+        }
+        $stmt->bind_param('sss', $username, $email, $hashed_password);
+        
+        if ($stmt->execute()) {
             $_SESSION['status_message'] = 'Account successfully created! You can now log in.';
             header('Location: login');
         } else {
@@ -72,12 +86,26 @@ if ($stmt->num_rows > 0) {
             header('Location: register');
         }
 
-        $stmt->close();
-    } else {
-        $_SESSION['status_message'] = 'Database error. Please try again later.';
-        header('Location: register');
-    }
+    // Bind parameters and execute the query
+    //if ($stmt) {
+        //$stmt->bind_param('sss', $username, $email, $hashed_password);
+        //$stmt->execute();
 
+        // If account creation is successful
+        //if ($stmt->affected_rows > 0) {
+            //$_SESSION['status_message'] = 'Account successfully created! You can now log in.';
+            //header('Location: login');
+        //} else {
+            //$_SESSION['status_message'] = 'Account creation failed. Please try again later.';
+            //header('Location: register');
+        //}
+
+        //$stmt->close();
+    //} else {
+        //$_SESSION['status_message'] = 'Database error. Please try again later.';
+        //header('Location: register');
+    //}
+    $stmt->close();
     $conn->close();
     exit();
 }

@@ -13,6 +13,7 @@ $routes = [
     'blog_list' => 'pages/blog_list.php',
     'admin' => 'pages/admin/dashboard.php', // admin page route
     'user_profile' => 'pages/user_profile.php', // user page route
+    'error_404' => 'pages/error_404.php', 
 
     // configuration files
     'registerController' => 'controller/registerController.php',

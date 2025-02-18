@@ -1,5 +1,6 @@
 <?php
 define ('ROOT_DIR', '/simple-websites.EP/php-example/');
+session_start();
 ?>
 
 <!DOCTYPE html>

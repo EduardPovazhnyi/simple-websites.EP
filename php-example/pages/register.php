@@ -11,7 +11,7 @@ include 'components/header.php';
             </a>
           </div>
 
-          <form class="mt-12">
+          <form class="mt-12" action= "registerController" method="post">
             <h3 class="text-xl font-bold text-blue-600 mb-6 text-center">Create free account</h3>
             <div class="space-y-4">
               <input name="name" type="text" class="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3 focus:bg-transparent border border-gray-100 focus:border-black outline-none transition-all" placeholder="Enter name" />
