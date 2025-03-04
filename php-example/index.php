@@ -6,13 +6,14 @@ $url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : '';
 $routes = [
     '' => 'pages/home.php',          // Home route
     'home' => 'pages/home.php',
-    'contact' => 'pages/contact.php',          // contact route
-    'register' => 'pages/register.php',    // register page route
-    'login' => 'pages/login.php', // login page route
-    'blog' => 'pages/blog.php', // blog page route
-    'blog_list' => 'pages/blog_list.php',
+    'contact' => 'pages/user/contact.php',          // contact route
+    'register' => 'pages/user/register.php',    // register page route
+    'login' => 'pages/user/login.php', // login page route
+    'blog' => 'pages/admin/blog.php', // blog page route
+    'blog_list' => 'pages/user/blog_list.php',
     'admin' => 'pages/admin/dashboard.php', // admin page route
-    'user_profile' => 'pages/user_profile.php', // user page route
+    'user_profile' => 'pages/user/user_profile.php', // user page route
+    'blog_details' => 'pages/user/blog_details.php', // blog ID page
     'error_404' => 'pages/error_404.php', 
 
     // configuration files

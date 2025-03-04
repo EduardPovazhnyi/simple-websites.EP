@@ -28,7 +28,7 @@ $blog->bind_result($blogId, $blogTitle, $blogImg, $blogContent, $created_at, $st
               <p class="text-gray-500 text-sm"><?= $blogContent ?></p>
               <p class="text-orange-500 text-[13px] font-semibold mt-4"><?= $status ?> <?= $created_at ?></p>
               
-              <a href="javascript:void(0);" class="mt-4 inline-block px-4 py-2 rounded tracking-wider bg-orange-500 hover:bg-orange-600 text-white text-[13px]">Read More</a>
+              <a href="blog_details?bid=<?= $blogId ?>" class="mt-4 inline-block px-4 py-2 rounded tracking-wider bg-orange-500 hover:bg-orange-600 text-white text-[13px]">Read More</a>
             </div>
           </div>
           <?php endwhile ?>         
