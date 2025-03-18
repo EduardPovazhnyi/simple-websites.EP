@@ -29,7 +29,7 @@
           </svg>
           <h3 class="text-lg font-bold mb-2 text-gray-800">Support Us</h3>
           <p class="text-sm text-gray-600">24/7 customer support for all your inquiries.</p>
-          <a href="javascript:void(0);" class="text-blue-600 font-bold inline-block text-sm mt-4 hover:underline">Learn more</a>
+          <a href="contact" class="text-blue-600 font-bold inline-block text-sm mt-4 hover:underline">Learn more</a>
         </div>
         <div class="bg-gray-100 p-6 rounded-md">
           <svg xmlns="http://www.w3.org/2000/svg" fill="#007bff" class="w-10 h-10 mb-4 inline-block bg-white p-2 rounded-md" viewBox="0 0 24 24">
