@@ -68,7 +68,7 @@ session_start();
               </a>
             </li>
             <li class='max-lg:border-b max-lg:py-3 px-3'>
-              <a href='blog' class='text-gray-300 hover:text-white text-base flex items-center'>
+              <a href='admin_dashboard' class='text-gray-300 hover:text-white text-base flex items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" class="w-4 h-4 mr-3"
                   viewBox="0 0 682.667 682.667">
                   <defs>

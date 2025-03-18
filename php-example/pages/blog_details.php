@@ -48,8 +48,8 @@ $blogComment = $conn->prepare("SELECT
 
 FROM blog_comments bc
 INNER JOIN users u ON bc.user_id = u.id
-WHERE bc.blog_id = ? ");
-$blogComment->bind_param("i", $blogId);
+WHERE bc.blog_id = $blogId AND bc.status = 'approved' ");
+
 $blogComment->execute();
 $blogComment->store_result();
 $blogComment->bind_result($comment, $commentCreated, $commentUsername, $userImg);
