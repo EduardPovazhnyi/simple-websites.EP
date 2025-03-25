@@ -38,7 +38,7 @@ if ($stmt = $conn->prepare('SELECT id, password, role FROM users WHERE email = ?
 
             // Redirect based on user type (admin or regular user)
             if ($role == 'admin') {
-                header('Location: admin');
+                header('Location: admin_dashboard');
             } else {
                 header('Location: user_profile');
             }

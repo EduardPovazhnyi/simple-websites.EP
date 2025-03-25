@@ -15,11 +15,14 @@ $routes = [
     'user_profile' => 'pages/user/user_profile.php', // user page route
     'blog_details' => 'pages/blog_details.php', // blog ID page
     'error_404' => 'pages/error_404.php', 
+    'pending' => 'pages/admin/pending_comments.php', 
 
     // configuration files
     'registerController' => 'controller/registerController.php',
     'loginController' => 'controller/loginController.php',
-    'logout' => 'controller/logoutController.php',
+    'logout' => 'controller/logoutController.php', 
+    'approve' => 'controller/approveController.php', 
+    'reject' => 'controller/rejectController.php', 
   
 ];
 
