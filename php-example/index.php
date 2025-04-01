@@ -16,6 +16,7 @@ $routes = [
     'blog_details' => 'pages/blog_details.php', // blog ID page
     'error_404' => 'pages/error_404.php', 
     'pending' => 'pages/admin/pending_comments.php', 
+    'add_blog' => 'pages/admin/add_blog.php', 
 
     // configuration files
     'registerController' => 'controller/registerController.php',
@@ -23,6 +24,8 @@ $routes = [
     'logout' => 'controller/logoutController.php', 
     'approve' => 'controller/approveController.php', 
     'reject' => 'controller/rejectController.php', 
+    'delete-user' => 'controller/deleteUserController.php', 
+    'upload_blog' => 'controller/uploadBlogController.php', 
   
 ];
 
